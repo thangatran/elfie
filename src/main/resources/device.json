@@ -1,0 +1,9 @@
+{
+  "udid": "emulator-5554",
+  "appPackage": "com.android.chrome",
+  "appActivity": "com.google.android.apps.chrome.Main",
+  "automationName": "UiAutomator2",
+  "newCommandTimeout": 3000,
+  "autoGrantPermissions": true,
+  "platformName": "android"
+}
