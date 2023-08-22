@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.interactions.PointerInput;
@@ -48,6 +49,7 @@ public class BasePage {
             String filename = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             File targetFile = new File("target/screenshots/" + filename + ".jpg");
             FileUtils.copyFile(srcFile, targetFile);
+            Allure.addAttachment(filename, FileUtils.openInputStream(srcFile));
         } catch (Exception e) {
             throw new RuntimeException("Cannot take screenshot: " + e);
         }
